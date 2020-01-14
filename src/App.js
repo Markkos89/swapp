@@ -11,13 +11,16 @@ function App() {
       fetch('https://swapi.co/api/people')
         .then(response => response.json())
         .then(data => {
+          console.log("fetch")
           setCharacters(data.results)
           ls.set(characters, data.results)
         });
     } else {
+      console.log("ls")
       setCharacters(chars)
     }
-  }, [characters])
+    // eslint-disable-next-line
+  }, [])
 
   console.log(characters)
 
